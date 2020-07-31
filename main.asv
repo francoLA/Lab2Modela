@@ -1,0 +1,71 @@
+%%%%%%%%%% parte 1 %%%%%%%%%%%%
+
+
+
+
+
+%%%%%%%%%% parte 2 %%%%%%%%%%%%
+
+%funcion1: 
+num1 = [0,0,4,0];
+den1 = [0,10,0,4];
+
+sys1 = tf(num1, den1);
+
+%funcion2: 
+num2 = [0,0,0,3];
+den2 = [0,0,6,16];
+
+sys2 = tf(num2, den2);
+
+%funcion3: 
+num3 = [0,0,4,10];
+den3 = [4,9,5,0];
+
+sys3 = tf(num3, den3);
+
+%funcion4: 
+num4 = [0,0,0,1];
+den4 = [0,0,7,10];
+
+sys4 = tf(num4, den4);
+
+%funcion5: 
+num5 = [0,0,8,8];
+den5 = [1,2,3,0];
+
+sys5 = tf(num5, den5);
+
+%funcion6: 
+num6 = [0,0,3,2];
+den6 = [0,5,7,10];
+
+sys6 = tf(num6, den6);
+
+%Lazo cerrado funcion 3:
+F3 = feedback(sys3, 1);
+
+% (1) Serie lazo cerrado funcion 3 con funcion 5:
+[n3_5, d3_5] = series(n3, d3, num5, den5);
+
+% (2) Serie lazo cerrado funcion 3 con funcion 4:
+[n3_4, d3_4] = series(n3, d3, num4, den4);
+
+% (3) Paralelo de serie funcion 3 con 4 y funcion 3 con 5:
+[n4_5, d4_5] = parallel(n3_4, d3_4, n3_5, d3_5); 
+
+% (4) Serie de (3) con funcion 6:
+[n6, d6] = series(n4_5, d4_5, num6, den6);
+
+% Sumador paralelo final:
+
+[num_aux, den_aux] = parallel(num1, den1, num2, den2);
+[num, den] = parallel(num_aux, den_aux, n6, d6);
+
+% Grafico respuesta al escalon:
+
+step(num, den
+
+
+
+
