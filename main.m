@@ -140,7 +140,7 @@ F = parallel(F6, F5);
 
 % Grafico respuesta al escalon:
 figure
-step(F);
+plot(step(F));
 title('Respuesta del diagrama de bloque a un escalón unitario');
 xlabel('Tiempo (segundos)');
 ylabel('Amplitud');
