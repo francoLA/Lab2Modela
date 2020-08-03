@@ -53,8 +53,8 @@ grid;
 [ceros2, polos2, gananciaEstatica2] = tf2zp(numerador2, denominador2);
 info2 = stepinfo(lazoAbierto2);
 
-%Función3: H(s) = 1/(s^3+2^s2+4s+8)
-numerador3 = [0 0 0 1];
+%Función3: H(s) = 16/(s^3+2^s2+4s+8)
+numerador3 = [0 0 0 16];
 denominador3 = [1 2 4 8];
 
 %Lazo abierto
