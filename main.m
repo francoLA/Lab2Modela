@@ -23,8 +23,11 @@ ylabel('Amplitud');
 grid;
 
 %Comparación
-[ceros1, polos1, gananciaEstatica1] = tf2zp(numerador1, denominador1);
-info1 = stepinfo(lazoAbierto1);
+[ceros1, polos1, gananciaEstatica1] = tf2zp(numerador1, denominador1)
+info1 = stepinfo(lazoAbierto1)
+
+[ceros1Cerrado, polos1Cerrado, gananciaEstatica1Cerrado] = tf2zp(numerador1Cerrado, denominador1Cerrado);
+info1Cerrado = stepinfo(lazoCerrado1);
 
 %Funcion2: H(s) = (5s^2+7s+4)/(s^2+6s+3)
 numerador2 = [5 7 4];
@@ -50,8 +53,11 @@ ylabel('Amplitud');
 grid;
 
 %Comparación
-[ceros2, polos2, gananciaEstatica2] = tf2zp(numerador2, denominador2);
-info2 = stepinfo(lazoAbierto2);
+[ceros2, polos2, gananciaEstatica2] = tf2zp(numerador2, denominador2)
+info2 = stepinfo(lazoAbierto2)
+
+[ceros2Cerrado, polos2Cerrado, gananciaEstatica2Cerrado] = tf2zp(numerador2Cerrado, denominador2Cerrado);
+info2Cerrado = stepinfo(lazoCerrado2);
 
 %Función3: H(s) = 16/(s^3+2^s2+4s+8)
 numerador3 = [0 0 0 16];
@@ -77,8 +83,11 @@ ylabel('Amplitud');
 grid;
 
 %Comparación
-[ceros3, polos3, gananciaEstatica3] = tf2zp(numerador3, denominador3);
-info3 = stepinfo(lazoAbierto3);
+[ceros3, polos3, gananciaEstatica3] = tf2zp(numerador3, denominador3)
+info3 = stepinfo(lazoAbierto3)
+
+[ceros3Cerrado, polos3Cerrado, gananciaEstatica3Cerrado] = tf2zp(numerador3Cerrado, denominador3Cerrado);
+info3Cerrado = stepinfo(lazoCerrado3);
 
 
 %%%%%%%%%% Parte 2 %%%%%%%%%%%%
